@@ -16,6 +16,8 @@ services:
     volumes:
       - client-data:/home/indy/.indy_client
       - ./tmp:/tmp
+    labels:
+      io.portainer.accesscontrol.public:
 
   #
   # Webserver
@@ -53,6 +55,8 @@ services:
       #- ./server:/home/indy/server
       - webserver-cli:/home/indy/.indy-cli
       - webserver-ledger:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
   #
   # Synchronization test
@@ -75,6 +79,8 @@ services:
       #- ./server:/home/indy/server
       - webserver-cli:/home/indy/.indy-cli
       - webserver-ledger:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
   #
   # Nodes
@@ -102,6 +108,8 @@ services:
       - RUST_LOG=${RUST_LOG}
     volumes:
       - nodes-data:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
   node1:
     image: von-network-base
@@ -120,6 +128,8 @@ services:
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node1-data:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
   node2:
     image: von-network-base
@@ -138,6 +148,8 @@ services:
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node2-data:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
   node3:
     image: von-network-base
@@ -156,6 +168,8 @@ services:
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node3-data:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
   node4:
     image: von-network-base
@@ -174,6 +188,8 @@ services:
       - RUST_LOG=${RUST_LOG}
     volumes:
       - node4-data:/home/indy/ledger
+    labels:
+      io.portainer.accesscontrol.public:
 
 networks:
   von:
